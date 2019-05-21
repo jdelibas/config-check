@@ -1,0 +1,65 @@
+{
+  "name": "config-check",
+  "version": "1.0.0",
+  "description": "Check all config vars and validate them",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "ava",
+    "test:watch": "./node_modules/.bin/ava --watch",
+    "coverage": "./node_modules/.bin/nyc ./node_modules/.bin/ava",
+    "lint": "./node_modules/.bin/standard",
+    "lint:fix": "./node_modules/.bin/standard --fix",
+    "changelog": "./node_modules/.bin/conventional-changelog -i CHANGELOG.md -s -r 0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdelibas/config-check.git"
+  },
+  "author": "James Delibas <jdelibas@gmail.com> (https://jamjar.rocks/)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://github.com/jdelibas/config-check",
+  "bugs": "https://github.com/jdelibas/config-check/issues",
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "conventional-changelog-cli": "^2.0.21",
+    "nyc": "^14.1.1",
+    "proxyquire": "^2.1.0",
+    "standard": "^12.0.1"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "sources": [
+      "src/**/*.{js,jsx}",
+      "!dist/**/*"
+    ],
+    "concurrency": 0,
+    "failFast": true,
+    "tap": false,
+    "powerAssert": false
+  },
+  "nyc": {
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "text",
+      "lcov",
+      "html",
+      "clover"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "cache": false,
+    "all": true,
+    "check-coverage": true
+  }
+}
