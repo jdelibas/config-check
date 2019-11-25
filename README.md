@@ -1,12 +1,37 @@
 # config-check
+<!-- vscode-markdown-toc -->
+* [Install](#Install)
+* [Usage](#Usage)
+	* [Methods](#Methods)
+		* [required()](#required)
+		* [default(value)](#defaultvalue)
+		* [int()](#int)
+		* [float()](#float)
+		* [list(delimiter)](#listdelimiter)
+		* [exec()](#exec)
+	* [Development](#Development)
+		* [Requirements](#Requirements)
+		* [Npm run commands](#Npmruncommands)
+* [LICENSE](#LICENSE)
 
-## Install
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+
+## <a name='Install'></a>Install
 
 ```shell
 $  npm i config-check
 ```
 
-## Usage
+## <a name='Usage'></a>Usage
 
 ```javascript
   const cc = require('config-check')
@@ -26,27 +51,33 @@ $  npm i config-check
   }
 
 ```
-### Methods
+### <a name='Methods'></a>Methods
 
-#### required()
+#### <a name='required'></a>required()
 Enforces env var existence
 ```javascript
   cc('SOME_ENV_VAR').required()
 ```
 
-#### default(value)
+#### <a name='defaultvalue'></a>default(value)
 Adds default value
 ```javascript
   cc('SOME_ENV_VAR').default('default value')
 ```
 
-#### int()
+#### <a name='int'></a>int()
 Enforces the value is an integer with casting
 ```javascript
   cc('SOME_ENV_VAR').int()
 ```
 
-#### list(delimiter)
+#### <a name='float'></a>float()
+Enforces the value is a float with casting
+```javascript
+  cc('SOME_ENV_VAR').float()
+```
+
+#### <a name='listdelimiter'></a>list(delimiter)
 Splits a string into a list, not safe
 Default delimiter is ','
 ```javascript
@@ -54,20 +85,20 @@ Default delimiter is ','
   cc('SOME_ENV_VAR').list(delimiter)
 ```
 
-#### exec()
+#### <a name='exec'></a>exec()
 Returns the final value
 ```javascript
   cc('SOME_ENV_VAR').exec()
 ```
 
-### Development
+### <a name='Development'></a>Development
 
-#### Requirements
+#### <a name='Requirements'></a>Requirements
 
 - standardjs linting
 - 100% test coverage
 
-#### Npm run commands
+#### <a name='Npmruncommands'></a>Npm run commands
 
 |Command|Description|
 |---|---|
@@ -78,6 +109,6 @@ Returns the final value
 |coverage|Coverage checker|
 |changelog|Generate changelog|
 
-## LICENSE
+## <a name='LICENSE'></a>LICENSE
 
 [DBAD](./LICENSE.md) for more [info](https://dbad-license.org/)
