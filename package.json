@@ -1,6 +1,6 @@
 {
   "name": "config-check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Check all config vars and validate them",
   "main": "src/index.js",
   "scripts": {
