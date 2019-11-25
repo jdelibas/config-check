@@ -40,6 +40,14 @@ class Env {
     return this
   }
 
+  float () {
+    if (isNaN(parseFloat(this.value))) {
+      throw new Error(`${this.key} must be a float`)
+    }
+    this.value = parseFloat(this.value)
+    return this
+  }
+
   list (delimiter = ',') {
     this.value = this.value.split(delimiter)
     return this

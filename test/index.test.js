@@ -96,6 +96,18 @@ test('should parse string as int', t => {
   t.is(result, expected)
 })
 
+test('should parse string as float', t => {
+  // Arrange
+  t.context.process.env.SOME_ENV_VAR = '2.2'
+  const expected = 2.2
+  // Act
+  const result = t.context.config('SOME_ENV_VAR')
+    .float()
+    .exec()
+  // Assert
+  t.is(result, expected)
+})
+
 test('should convert string to array', t => {
   // Arrange
   t.context.process.env.SOME_ENV_VAR = 'a,b,c,d'
